@@ -2,10 +2,15 @@
   
   $(function() {
     var options = {
-    		'transitionIn'	:	'elastic',
-    		'transitionOut'	:	'elastic',
-    		'speedIn'		:	600, 
-    		'speedOut'		:	200
+    		'openEffect'	:	'elastic',
+    		'closeEffect'	:	'elastic',
+    		'nextEffect'	:	'fade',
+    		'prevEffect'	:	'fade',
+    		'openSpeed'		:	600, 
+    		'closeSpeed'	:	200,
+    		'openOpacity'	:	false, 
+    		'closeOpacity'	:	false,
+    		'loop'			:	false
   		}
     
     $("div.attachments a.lightbox, div.attachments a.swf").fancybox(options);
@@ -14,8 +19,8 @@
       {
         'width': '100%', // or whatever 
         'height': '100%', 
-        'autoDimensions': false,         
-        'onClosed': function() { 
+        'autoSize': false,         
+        'afterClose': function() { 
           $("#fancybox-inner").empty(); 
         }
       }
